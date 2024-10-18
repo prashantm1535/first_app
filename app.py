@@ -7,6 +7,8 @@ app = Flask(__name__)
 def index():
     return "<h1>Hello, World</h1>"
 
+# Multiple routes to the same function using different route patterns
+
 
 @app.route('/hello')
 @app.route('/hello/')
