@@ -1,3 +1,4 @@
 *.txt
 *.pdf
+*.venv
 flask_learning_path.md
