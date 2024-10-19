@@ -63,5 +63,19 @@ def show_subpath(subpath):
     return f"Subpath: {subpath}"
 
 
+# Flask routes can handle different HTTP methods such as GET (default) and POST.
+# Example of a route that handles both GET and POST methods:
+
+
+@app.route('/http_methods', methods=['GET', 'POST'])
+def http_methods():
+    if request.method == 'GET':
+        return "You made a GET request\n"
+    elif request.method == 'POST':
+        return "You made a POST request\n"
+    else:
+        return "You will never see this message\n"
+    
+    
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5555, debug=True)
