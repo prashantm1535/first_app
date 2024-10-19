@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flask App</title>
-  </head>
+{% extends "base.html" %}
+{% block title%}Index Page{% endblock %} 
+
+{% block content%}
   <body>
     <h1>Hello, World!</h1>
     <ul>
@@ -21,5 +18,7 @@
         {%endif%} {%endfor%}
       </ul>
     </ul>
-  </body>
-</html>
+
+    <a href="{{ url_for('other') }}">Redirecting to Other Page</a>
+
+{% endblock %}

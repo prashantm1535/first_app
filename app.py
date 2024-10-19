@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__, template_folder='templates')
 
@@ -8,8 +8,52 @@ def index():
     # my_result = 10 + 50
     mylist = [10,20,30,40,50,60,70]
     return render_template("index.html", list=mylist)
+
+@app.route('/another')
+def other():
+    some_text = "Hello, World."
+    return render_template("other.html", text=some_text)
+
+# we can use url_for() in both template as wel as in python application program as follow
+
+@app.route('/redirect_to_index')
+def redirect_to_index():
+    return redirect(url_for('index'))
+
+@app.template_filter('reverse_string') # custom filter for '/other' route
+def reverse_string(s):
+    return s[::-1]
+
+@app.template_filter('repeat') # custom filter for '/other' route
+def repeat(s, times=2):
+    return s * times
+
+@app.template_filter('alternate_case') # custom filter for '/other' route
+def alternate_case(s):
+    return ''.join([c.upper() if i % 2 == 0 else c.lower() for i, c in enumerate(s)])
+
+    
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5555, debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

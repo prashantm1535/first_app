@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block title %} Other Page {% endblock %} 
+
+{% block content %} 
+    <a href="{{ url_for('index')}}"> Index Page</a>
+    <h1>Jinja2 Filters.</h1>
+    <p> {{text}}</p> 
+    <p>Examples of filters in Jinja2 Templating.</p>
+     <ol>
+        <li>This is capital filter : {{ text | capitalize }}</li> <br>
+        <li>This is upper filter : {{ text | upper }}</li> <br>
+        <li>This is lower filter : {{ text | lower }}</li> <br>
+        <li>This is length filter : {{ text | length }}</li> <br>
+        <li>This is safe mode filter : {{ text | safe }}</li> <br>
+        <!-- custom filter 1-->
+        <li>This is customized filter to reverse string : {{ text | reverse_string }}</li>
+        <!-- custom filter 2--> <br>
+        <li>This is customized filter to alternate case of string : {{ text | alternate_case }}</li>
+        <!-- custom filter 3--> <br>
+        <li>This is customized filter to repeat string : {{ text | repeat(4) }}</li> <br>
+        <li>Here replacing 'l' to 'L' in given text : {{ text | replace('l','L') }}</li> <br>
+    </ol>
+{% endblock %}
