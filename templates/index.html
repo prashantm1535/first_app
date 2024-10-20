@@ -4,21 +4,29 @@
 {% block content%}
   <body>
     <h1>Hello, World!</h1>
-    <ul>
-      <!-- <li>My value is <b>{{myvalue}}</b>.</li>
-        <li>My result is <b>{{myresult}}</b>.</li> -->
-
-      <li>My list is {{ list }}</li>
-      <br />
-      <ul>
-        {%for item in list%} {%if item==30%}
-        <li style="color: red"><b>{{item}}</b></li>
-        {%else%}
-        <li><b>{{item}}</b></li>
-        {%endif%} {%endfor%}
-      </ul>
-    </ul>
-
-    <a href="{{ url_for('other') }}">Redirecting to Other Page</a>
-
+    <form method="POST" action="{{ url_for('index') }}">
+      <input type="text" name="username" placeholder="User Name"> <br>
+      <input type="password" name="password" placeholder="Password"> <br>
+      <input type="submit" value="Login">
+    </form>
+    
 {% endblock %}
+
+
+
+<!-- <ul> -->
+  <!-- <li>My value is <b>{{myvalue}}</b>.</li>
+    <li>My result is <b>{{myresult}}</b>.</li> -->
+
+  <!-- <li>My list is {{ list }}</li> -->
+  <!-- <br /> -->
+  <!-- <ul> -->
+    <!-- {%for item in list%} {%if item==30%} -->
+    <!-- <li style="color: red"><b>{{item}}</b></li> -->
+    <!-- {%else%} -->
+    <!-- <li><b>{{item}}</b></li> -->
+    <!-- {%endif%} {%endfor%} -->
+  <!-- </ul> -->
+<!-- </ul> -->
+
+<!-- <a href="{{ url_for('other') }}">Redirecting to Other Page</a> -->
