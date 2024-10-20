@@ -10,7 +10,11 @@
       <input type="submit" value="Login">
     </form>
 
-    
+    <h1>File Upload</h1>
+    <form method="POST" action="{{ url_for('file_upload')}}" enctype="multipart/form-data">
+      <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain" required="required">
+      <input type="submit" value="Upload File">
+    </form>
     
 {% endblock %}
 
