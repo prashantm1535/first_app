@@ -3,12 +3,14 @@
 
 {% block content%}
   <body>
-    <h1>Hello, World!</h1>
+    <h1>Form to demonstrate the request of "POST" method.</h1>
     <form method="POST" action="{{ url_for('index') }}">
       <input type="text" name="username" placeholder="User Name"> <br>
       <input type="password" name="password" placeholder="Password"> <br>
       <input type="submit" value="Login">
     </form>
+
+    
     
 {% endblock %}
 
